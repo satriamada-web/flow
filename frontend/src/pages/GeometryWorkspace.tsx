@@ -1,12 +1,12 @@
-import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { Bounds, Grid, OrbitControls, PerspectiveCamera } from '@react-three/drei';
 import * as THREE from 'three';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader.js';
 import { STLLoader } from 'three/examples/jsm/loaders/STLLoader.js';
 import {
-  Box, Check, Eye, EyeOff, FileUp, Focus, Grid3X3, Info,
-  RotateCcw, Scan, Triangle, UploadCloud,
+  Box, Check, Eye, EyeOff, FileUp, Grid3X3, Info,
+  Scan, Triangle, UploadCloud,
 } from 'lucide-react';
 
 type GeometryAsset = {
@@ -81,7 +81,6 @@ const GeometryWorkspace: React.FC = () => {
 
       const bounds = new THREE.Box3().setFromObject(object);
       if (bounds.isEmpty()) throw new Error('File tidak berisi geometri 3D yang dapat dibaca.');
-      const size = bounds.getSize(new THREE.Vector3());
       const center = bounds.getCenter(new THREE.Vector3());
       object.position.sub(center);
       const counts = { vertices: 0, triangles: 0 };
