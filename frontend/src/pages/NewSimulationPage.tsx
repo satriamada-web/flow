@@ -4,6 +4,7 @@ import { toast } from 'sonner';
 import { ArrowLeft, ArrowRight, Check, FileBox, FileUp, Gauge, Thermometer, Trash2 } from 'lucide-react';
 
 type Solver = 'fea_classic' | 'thermal_classic';
+const stages = ['Project', 'Physics & geometry', 'Review'];
 const NewSimulationPage: React.FC = () => {
   const navigate = useNavigate();
   const [step, setStep] = useState(0);
