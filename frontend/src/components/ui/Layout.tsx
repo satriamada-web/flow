@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { NavLink, Outlet, useLocation } from 'react-router-dom';
 import {
   Activity, ChevronLeft, ChevronRight, Cpu, FolderKanban,
-  LayoutDashboard, Menu, Plus, Settings2, X, Zap,
+  LayoutDashboard, Menu, Plus, Box, X, Zap,
 } from 'lucide-react';
 
 const navItems = [
   { name: 'Overview', path: '/', icon: LayoutDashboard, end: true },
   { name: 'Projects', path: '/simulations', icon: FolderKanban, end: false },
   { name: 'New simulation', path: '/simulations/new', icon: Plus, end: true },
+  { name: '3D Geometry', path: '/geometry', icon: Box, end: true },
   { name: 'Solver library', path: '/solvers', icon: Cpu, end: true },
 ];
 
@@ -104,7 +105,7 @@ const Layout: React.FC = () => {
               <Menu size={20} />
             </button>
             <div className="min-w-0">
-              <p className="truncate text-xs font-semibold text-slate-800">{location.pathname.startsWith('/simulations/new') ? 'Create workspace' : location.pathname.startsWith('/simulations/') ? 'Project workspace' : location.pathname.startsWith('/solvers') ? 'Solver library' : 'Engineering workspace'}</p>
+              <p className="truncate text-xs font-semibold text-slate-800">{location.pathname.startsWith('/simulations/new') ? 'Create workspace' : location.pathname.startsWith('/simulations/') ? 'Project workspace' : location.pathname.startsWith('/solvers') ? 'Solver library' : location.pathname.startsWith('/geometry') ? '3D Geometry workspace' : 'Engineering workspace'}</p>
               <p className="hidden text-[10px] text-slate-400 sm:block">FLOW / MULTIPHYSICS SIMULATION</p>
             </div>
           </div>
