@@ -6,6 +6,7 @@ import DashboardPage from './pages/DashboardPage';
 import SimulationPage from './pages/SimulationPage';
 import SolversPage from './pages/SolversPage';
 import NewSimulationPage from './pages/NewSimulationPage';
+import GeometryWorkspace from './pages/GeometryWorkspace';
 
 const App: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const App: React.FC = () => {
           <Route path="/" element={<DashboardPage />} />
           <Route path="/simulations" element={<DashboardPage />} />
           <Route path="/simulations/new" element={<NewSimulationPage />} />
+          <Route path="/geometry" element={<GeometryWorkspace />} />
           <Route path="/simulations/:id" element={<SimulationPage />} />
           <Route path="/solvers" element={<SolversPage />} />
         </Route>
